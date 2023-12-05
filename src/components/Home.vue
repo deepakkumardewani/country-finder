@@ -69,6 +69,15 @@ function toggleTheme() {
         }}</v-icon>
       </v-btn>
     </v-toolbar>
+    <v-row class="pa-10" justify="space-between">
+      <v-col cols="4">
+        <v-text-field
+          dark
+          label="Search for a country"
+          hide-details
+          variant="solo"
+        ></v-text-field>
+      </v-col>
       <v-col cols="2">
         <v-select
           :model-value="selectedRegion"
@@ -79,6 +88,7 @@ function toggleTheme() {
           variant="solo"
         ></v-select>
       </v-col>
+    </v-row>
 
     <div class="pa-10 d-flex flex-wrap justify-space-around">
       <v-card
