@@ -79,6 +79,43 @@ function toggleTheme() {
           variant="solo"
         ></v-select>
       </v-col>
+
+    <div class="pa-10 d-flex flex-wrap justify-space-around">
+      <v-card
+        v-for="(country, index) in countries"
+        :key="index"
+        @click="showDetails(country)"
+        class="my-3"
+        height="350"
+        width="300"
+        :ripple="false"
+      >
+        <v-img
+          height="200"
+          :src="country.flags.png"
+          cover
+          class="text-white"
+        ></v-img>
+        <v-card-text>
+          <div class="mb-3 text-h6">
+            <b>{{ country.name.common }}</b>
+          </div>
+          <div>
+            <b>Population:</b>
+            {{
+              country.population.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+              })
+            }}
+          </div>
+          <div><b>Region:</b> {{ country.region }}</div>
+          <div>
+            <b>Capital:</b>
+            {{ country.capital ? country.capital[0] : "Unknown" }}
+          </div>
+        </v-card-text>
+      </v-card>
+    </div>
   </div>
 </template>
 
