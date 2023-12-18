@@ -3,7 +3,9 @@ import Home from "./components/Home.vue";
 </script>
 
 <template>
-  <Home />
+  <v-app dark>
+    <Home />
+  </v-app>
 </template>
 
 <style scoped></style>
