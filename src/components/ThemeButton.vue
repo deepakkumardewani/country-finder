@@ -3,8 +3,8 @@
     <v-btn icon @click="toggleTheme">
       <v-icon>{{
         theme.global.name.value === "dark"
-          ? "fa-solid fa-moon"
-          : "fa-solid fa-sun"
+          ? "fa-solid fa-sun"
+          : "fa-solid fa-moon"
       }}</v-icon>
     </v-btn>
   </div>
