@@ -1,10 +1,12 @@
 <script setup>
-import Home from "./components/Home.vue";
+import Layout from "./components/Layout.vue";
+import TheHeader from "./components/TheHeader.vue";
 </script>
 
 <template>
   <v-app dark>
-    <Home />
+    <TheHeader />
+    <Layout />
   </v-app>
 </template>
 
