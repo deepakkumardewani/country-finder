@@ -10,12 +10,15 @@ jobs:
           name: Update NPM
           command: "sudo npm install -g npm"
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: npm install --legacy-peer-deps
+          command: yarn install --legacy-peer-deps
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
       - run:
