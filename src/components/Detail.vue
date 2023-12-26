@@ -1,7 +1,5 @@
 <script setup>
 defineProps(["country"]);
-
-// console.log(country.currencies);
 </script>
 <template>
   <div class="container ma-16">
