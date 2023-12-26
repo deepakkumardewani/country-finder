@@ -16,7 +16,7 @@ let sortValues = ref([]);
 let selectedRegion = ref("");
 let selectedSortType = ref("");
 let selectedCountry = ref("");
-let dialog = ref(false);
+let showDetail = ref(false);
 
 onMounted(() => {
   allCountries = allCountries.map((country) => {
@@ -106,7 +106,7 @@ function getMostPopulatedCountries() {
   return top8;
 }
 function showDetails(country) {
-  dialog.value = true;
+  showDetail.value = true;
   selectedCountry.value = country;
 }
 </script>
@@ -114,7 +114,7 @@ function showDetails(country) {
 <template>
   <div>
     <v-slide-x-transition mode="in-out">
-      <div v-show="!dialog">
+      <div v-show="!showDetail">
         <v-row class="mx-12 mt-10" justify="space-between">
           <v-col cols="12" sm="6" lg="4">
             <v-text-field
@@ -154,10 +154,10 @@ function showDetails(country) {
     </v-slide-x-transition>
     <v-slide-x-transition mode="out-in">
       <Detail
-        v-if="dialog"
+        v-if="showDetail"
         :country="selectedCountry"
         transition="scroll-x-transition"
-        @close="dialog = false"
+        @close="showDetail = false"
       />
     </v-slide-x-transition>
   </div>
