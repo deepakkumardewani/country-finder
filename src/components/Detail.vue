@@ -10,7 +10,7 @@ defineProps(["country"]);
       </v-col>
       <v-col cols="12" lg="6" sm="12">
         <div class="mx-lg-10 my-3 mx-sm-0">
-          <span class="my-4 tw-text-5xl">{{ country.name }}</span>
+          <span id="name" class="my-4 tw-text-5xl">{{ country.name }}</span>
           <v-row class="my-8">
             <v-col cols="12" lg="6" sm="12">
               <div>

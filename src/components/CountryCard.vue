@@ -3,6 +3,7 @@ defineProps(["countries", "showDetails"]);
 </script>
 <template>
   <v-card
+    id="country-card"
     v-for="(country, index) in countries"
     :key="index"
     class="my-3 bg-elementBg md:tw-w-[300px] tw-w-[400px]"

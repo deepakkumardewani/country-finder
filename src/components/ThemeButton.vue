@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <v-btn icon @click="toggleTheme">
-      <v-icon>{{
-        theme.global.name.value === "dark"
-          ? "fa-solid fa-sun"
-          : "fa-solid fa-moon"
-      }}</v-icon>
-    </v-btn>
-  </div>
+  <v-btn id="theme-toggle" icon @click="toggleTheme">
+    <v-icon>{{
+      theme.global.name.value === "dark"
+        ? "fa-solid fa-sun"
+        : "fa-solid fa-moon"
+    }}</v-icon>
+  </v-btn>
 </template>
 
 <script setup>

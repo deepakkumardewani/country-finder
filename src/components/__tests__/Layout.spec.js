@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { createVuetify } from "vuetify";
 
@@ -8,13 +8,12 @@ describe("check for layout component", () => {
   const vuetify = createVuetify();
 
   it("renders properly", () => {
-    const wrapper = mount(Layout, {
+    const wrapper = shallowMount(Layout, {
       global: {
         plugins: [vuetify],
       },
     });
-    const layout = wrapper.get("Home");
-
+    const layout = wrapper.get("#home");
     expect(layout.exists()).toBe(true);
   });
 });

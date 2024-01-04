@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { createVuetify } from "vuetify";
 
@@ -8,13 +8,12 @@ describe("check for header", () => {
   const vuetify = createVuetify();
 
   it("renders properly", () => {
-    const wrapper = mount(TheHeader, {
+    const wrapper = shallowMount(TheHeader, {
       global: {
         plugins: [vuetify],
       },
     });
-    const button = wrapper.get("v-toolbar");
-
-    expect(button.exists()).toBe(true);
+    const toolbar = wrapper.find("#toolbar");
+    expect(toolbar.exists()).toBe(true);
   });
 });

@@ -112,55 +112,56 @@ function showDetails(country) {
 </script>
 
 <template>
-  <div>
-    <v-slide-x-transition mode="in-out">
-      <div v-show="!showDetail">
-        <v-row class="mx-12 mt-10" justify="space-between">
-          <v-col cols="12" sm="6" lg="4">
-            <v-text-field
-              v-model="searchQuery"
-              hide-details
-              label="Search for a country"
-              variant="solo"
-              @update:model-value="searchCountry"
-            ></v-text-field>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12" sm="6" lg="3">
-            <v-select
-              :model-value="selectedSortType"
-              label="Sort by"
-              :items="sortValues"
-              hide-details
-              variant="solo"
-              @update:model-value="changeSort"
-            ></v-select>
-          </v-col>
-          <v-col cols="12" sm="6" lg="3">
-            <v-select
-              :model-value="selectedRegion"
-              label="Filter by region"
-              :items="regions"
-              hide-details
-              variant="solo"
-              @update:model-value="changeRegion"
-            ></v-select>
-          </v-col>
-        </v-row>
-        <div class="pa-10 d-flex flex-wrap justify-space-around">
-          <CountryCard :countries="countries" :show-details="showDetails" />
-        </div>
+  <v-slide-x-transition mode="in-out">
+    <div v-show="!showDetail">
+      <v-row class="mx-12 mt-10" justify="space-between">
+        <v-col cols="12" sm="6" lg="4">
+          <v-text-field
+            id="search-bar"
+            v-model="searchQuery"
+            hide-details
+            label="Search for a country"
+            variant="solo"
+            @update:model-value="searchCountry"
+          ></v-text-field>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col cols="12" sm="6" lg="3">
+          <v-select
+            id="sort-dropdown"
+            :model-value="selectedSortType"
+            label="Sort by"
+            :items="sortValues"
+            hide-details
+            variant="solo"
+            @update:model-value="changeSort"
+          ></v-select>
+        </v-col>
+        <v-col cols="12" sm="6" lg="3">
+          <v-select
+            id="region-dropdown"
+            :model-value="selectedRegion"
+            label="Filter by region"
+            :items="regions"
+            hide-details
+            variant="solo"
+            @update:model-value="changeRegion"
+          ></v-select>
+        </v-col>
+      </v-row>
+      <div class="pa-10 d-flex flex-wrap justify-space-around">
+        <CountryCard :countries="countries" :show-details="showDetails" />
       </div>
-    </v-slide-x-transition>
-    <v-slide-x-transition mode="out-in">
-      <Detail
-        v-if="showDetail"
-        :country="selectedCountry"
-        transition="scroll-x-transition"
-        @close="showDetail = false"
-      />
-    </v-slide-x-transition>
-  </div>
+    </div>
+  </v-slide-x-transition>
+  <v-slide-x-transition mode="out-in">
+    <Detail
+      v-if="showDetail"
+      :country="selectedCountry"
+      transition="scroll-x-transition"
+      @close="showDetail = false"
+    />
+  </v-slide-x-transition>
 </template>
 
 <style lang="scss" scoped></style>
