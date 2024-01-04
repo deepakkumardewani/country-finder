@@ -1,4 +1,7 @@
 #Country Finder
+
+[![cci-4xo1p](https://circleci.com/gh/cci-4xo1p/country-finder.svg?style=shield)]
+
 ##Overview
 The Country Finder project is a user-friendly web application designed to provide detailed information about countries around the world. Whether you're a traveler planning your next adventure or a developer looking for an easy-to-use country information API, Country Finder has you covered.
 
